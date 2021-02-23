@@ -34,6 +34,9 @@ namespace DevIO.Api
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.ResolveDependencies();
+            services.Configure<ApiBehaviorOptions>(options => {
+                options.SuppressModelStateInvalidFilter = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
