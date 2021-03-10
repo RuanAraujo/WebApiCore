@@ -14,4 +14,6 @@ namespace DevIO.Business.Models
         /* EF Relations */
         public IEnumerable<Produto> Produtos { get; set; }
     }
+
+
 }
