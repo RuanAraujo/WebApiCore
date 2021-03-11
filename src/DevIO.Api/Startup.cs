@@ -34,6 +34,7 @@ namespace DevIO.Api
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.ResolveDependencies();
+            services.AddIdentityConfiguration(Configuration);
             services.Configure<ApiBehaviorOptions>(options => {
                 options.SuppressModelStateInvalidFilter = true;
             });
@@ -46,6 +47,7 @@ namespace DevIO.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
 
@@ -57,6 +59,7 @@ namespace DevIO.Api
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
